@@ -133,36 +133,46 @@
             </tr>
             <tr>
               <td class="popout" id="row1">ROW1</td>
-              <td class="row1 col1 tlbr" id="slot1"></td>
-              <td class="row1 col2" id="slot2"></td>
-              <td class="row1 col3" id="slot3"></td>
-              <td class="row1 col4" id="slot4"></td>
+              <td class="row1 col1 tlbr" id="slot1">Down and kill with throwing knife.</td>
+              <td class="row1 col2" id="slot2">Land 1500 meters from team and rejoin alive.</td>
+              <td class="row1 col3" id="slot3">Kill someone while in water.</td>
+              <td class="row1 col4" id="slot4">Beat double digits for kills.</td>
             </tr>
             <tr>
               <td class="popout" id="row2">ROW2</td>
-              <td class="row2 col1" id="slot6"></td>
-              <td class="row2 col2 tlbr" id="slot7"></td>
-              <td class="row2 col3" id="slot8"></td>
-              <td class="row2 col4 bltr" id="slot9"></td>
+              <td class="row2 col1" id="slot6">Get 2 kills with launchers in a single game.</td>
+              <td class="row2 col2 tlbr" id="slot7">Allow the boys to make a loadout for you and complete a match with it.</td>
+              <td class="row2 col3" id="slot8">Win your Gulag with both kills.</td>
+              <td class="row2 col4 bltr" id="slot9">Get a win with most kills on team.</td>
             </tr>
             <tr>
               <td class="popout" id="row3">ROW3</td>
-              <td class="row3 col1" id="slot11"></td>
-              <td class="row3 col2" id="slot12"></td>
-              <td class="row3 col3 tlbr bltr" id="slot13"></td>
-              <td class="row3 col4" id="slot14"></td>
+              <td class="row3 col1" id="slot11">Kill no AI, but defuse the loadout box in a stronghold.</td>
+              <td class="row3 col2" id="slot12">3 kills with snipers in a single match.</td>
+              <td class="row3 col3 tlbr bltr" id="slot13">Win a game.</td>
+              <td class="row3 col4" id="slot14">Everytime a team mate requests plates/ammo, you must provide for an entire match.</td>
             </tr>
           </table>
         </div>
       </div>
-  </div><!-- /.container -->
-
-
   <!-- FOOTER -->
   <footer class="container" style="margin-top:5%">
     <p>Just for a bit of fun between team mates. Bingo card design adapted from <a href='https://github.com/ootbingo/bingo'>Ocarina of Time Bingo</a></p>
   </footer>
 </main>
+
+  <script>
+  document.querySelectorAll('#bingo tr td:not(.popout):not(#board-popout):not(#bingo-info), #selected td').forEach(el => el.addEventListener('click', () => {
+    if (el.classList.contains('greensquare')) {
+      el.classList.add('redsquare');
+      el.classList.remove('greensquare');
+    } else if (el.classList.contains('redsquare')) {
+      el.classList.remove('redsquare');
+    } else {
+      el.classList.add('greensquare');
+    }
+  }));
+  </script>
 
   </body>
 </html>

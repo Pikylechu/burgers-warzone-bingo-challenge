@@ -164,5 +164,18 @@
   </footer>
 </main>
 
+<script>
+  document.querySelectorAll('#bingo tr td:not(.popout):not(#board-popout):not(#bingo-info), #selected td').forEach(el => el.addEventListener('click', () => {
+    if (el.classList.contains('greensquare')) {
+      el.classList.add('redsquare');
+      el.classList.remove('greensquare');
+    } else if (el.classList.contains('redsquare')) {
+      el.classList.remove('redsquare');
+    } else {
+      el.classList.add('greensquare');
+    }
+  }));
+  </script>
+
   </body>
 </html>
